@@ -4,7 +4,9 @@ Start a project with Git, DDEV and OpenSpec. Keep product goals, users and workf
 
 ## Create your project from this template
 
-On GitHub, select **Use this template → Create a new repository**. GitHub creates a separate repository without the template's commit history. Clone that new repository:
+Template repository: [ag-constructiva/openspec-starter](https://github.com/ag-constructiva/openspec-starter).
+
+On GitHub, select **Use this template → Create a new repository**. GitHub creates a separate repository without the template's commit history. Clone the new repository using its URL:
 
 ```sh
 git clone git@github.com:YOUR-ACCOUNT/YOUR-REPOSITORY.git my-project
