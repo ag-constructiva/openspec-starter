@@ -25,15 +25,18 @@ changes the DDEV docroot to `public`. Then it asks whether to start DDEV's
 database container (default: yes). Finally, it asks whether to delete
 `setup.sh`. The database choice is saved in the untracked
 `.ddev/config.local.yaml`; you can rerun the script later to change it if you
-keep the script. Then initialize OpenSpec and create the initial commit:
+keep the script. It asks whether to install a minimal OpenSpec setup for Claude.
+If you choose yes, it configures OpenSpec globally for skills only and the four
+workflows `explore`, `propose`, `apply` and `archive`, then installs them in
+this project. If you choose no, initialize OpenSpec manually later. Create the
+initial commit:
 
 ```sh
-npx @fission-ai/openspec@latest init
 git add .
 git commit -m "Initialize project"
 ```
 
-OpenSpec may create or update files during `init`. Review the changes before committing.
+OpenSpec may create or update files during setup. Review the changes before committing.
 
 Symfony is created with `symfony new <directory> --webapp`. See the
 [Symfony setup guide](https://symfony.com/doc/current/setup.html) for options.

@@ -65,6 +65,30 @@ done
 ddev start
 
 while true; do
+  read -r -p "Install minimal OpenSpec setup for Claude? [y/N] " answer
+  case "${answer,,}" in
+    y|yes)
+      if ! command -v openspec >/dev/null 2>&1; then
+        echo "OpenSpec CLI is required. Install it, then run ./setup.sh again." >&2
+        exit 1
+      fi
+      openspec config set profile custom
+      openspec config set delivery skills
+      openspec config set workflows '["explore","propose","apply","archive"]'
+      openspec init --tools claude --profile custom
+      break
+      ;;
+    ""|n|no)
+      echo "Skipping OpenSpec. Initialize it manually later with: openspec init --tools claude"
+      break
+      ;;
+    *)
+      echo "Please answer y or n."
+      ;;
+  esac
+done
+
+while true; do
   read -r -p "Delete setup.sh now? [y/N] " answer
   case "${answer,,}" in
     y|yes)
