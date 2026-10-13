@@ -1,0 +1,9 @@
+# DDEV-generated local files. Keep this file so the DDEV project config is versioned.
+config.local.yaml
+*.local.yaml
+.env
+certs/
+db_snapshots/
+mutagen/
+traefik/
+web-build/
